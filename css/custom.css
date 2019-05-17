@@ -1,0 +1,146 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+body {
+    padding-top: 5px;
+    font-size:13px;
+    background: #111;
+    /*padding-bottom: 20px;*/
+}
+img {
+	display: block;
+    max-width: 100%;
+    height: auto;
+	margin-bottom: 12px;
+}
+h4 {
+	color:#fab101;
+	margin-bottom:5px;
+    margin-top: 24px;
+}
+h5 {
+	color:#8fc1ef;
+	line-height: 20px;
+}
+.cover {
+  width: 100%;
+  object-fit: cover;
+  /*margin: 0 auto;*/
+}
+.martop1 {
+	margin-top: 24px;
+}
+article {
+	margin-top: 40px;
+}
+/*.container {background: #000;}*/
+
+.navbar .container {
+	/*background: #375a7f;*/
+	background: #e39401;
+    background-image: -moz-linear-gradient(top, #fcac00, #bd7002);
+    background-image: -ms-linear-gradient(top, #fcac00, #bd7002);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fcac00), to(#bd7002));
+    background-image: -webkit-linear-gradient(top, #fcac00, #bd7002);
+    background-image: -o-linear-gradient(top, #fcac00, #bd7002);
+    background-image: linear-gradient(top, #fcac00, #bd7002);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcac00', endColorstr='#bd7002', GradientType=0);
+    
+}
+.panel-eel-gold > .panel-heading {
+    color: #000;
+    background: #e39401;
+    background-image: -moz-linear-gradient(top, #fcac00, #bd7002);
+    background-image: -ms-linear-gradient(top, #fcac00, #bd7002);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fcac00), to(#bd7002));
+    background-image: -webkit-linear-gradient(top, #fcac00, #bd7002);
+    background-image: -o-linear-gradient(top, #fcac00, #bd7002);
+    background-image: linear-gradient(top, #fcac00, #bd7002);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcac00', endColorstr='#bd7002', GradientType=0);
+    
+    border-color: #000;
+}
+.panel-black {
+	background:#000; 
+	border-radius:4px; 
+	padding-bottom:40px;
+}
+#utilnavbar {
+	height: 80px;
+	padding: 11px 0 0;
+}
+#utilnavbar .container {
+	padding-left:0;
+}
+#utilnavbar .container > .col-md-6 {
+	padding-left:0;
+	font-size: 1.3em;
+}
+#utilnavbar .brand {
+    font-size: 24px;
+    color: #fab101;
+}
+#utilnavbar h5 {
+	text-align: right;
+	color:#fff;
+}
+#utilnavbar h5 span {
+    font-size: 1.4em;
+    color: #e39401;
+    margin:8px 0 0 12px;
+    display: block;
+    text-align: right;
+}
+/*.navbar-nav > li > a > .navbar-rt {
+    padding: 0;
+    margin: 0;
+    height:40px;
+    font-size: 1.4em;
+}*/
+
+/* ==========================================================================
+   Darkly Overrides
+   ========================================================================== */
+.btn-default {
+    text-shadow: none;
+}
+.navbar-default {
+    background-color: #000;
+    /*border-color: transparent;*/
+}
+.navbar-default .navbar-nav > li > a {
+    color: #000;
+    font-size: 1.2em;
+}
+a:hover {
+    color: #fff;
+}
+a.list-group-item:hover, button.list-group-item:hover, a.list-group-item:focus, button.list-group-item:focus {
+    text-decoration: underline;
+    color: #8fc1ef;
+}
+/*.navbar-default .navbar-nav>li>a:hover {
+    color: #fff;
+    background-color: transparent;
+}*/
+.navbar-default .navbar-nav>li>a:hover {
+	color: #ffffff;
+}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:visited {
+    color: #000000;
+    background-color: transparent;
+}
+a.list-group-item, button.list-group-item {
+    color: #e39401;
+}
+.list-group-item {
+    background-color: #000;
+    border: 1px solid #464545;
+}
+footer {
+	display: block;
+}
