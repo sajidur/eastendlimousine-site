@@ -97,7 +97,7 @@
             </ul>
           </li>--> 
           <li><a href="corporate-accounts.html">Corporate Accounts</a></li>
-          <li><a href="contact-with-us.html">Get a Quote</a></li>
+          <li><a href="get-a-quote.html">Get a Quote</a></li>
 
           <!--<li><a href="#">Specials</a></li>-->
         </ul>
@@ -150,6 +150,17 @@
       <div class="col-md-12">
       <div class="booking-input-form">
         <div class="booking-form-data margin-nai">
+            <div class="row">
+                <div class="col-md-6"><div class="form-input-group">
+                  <input type="text" class="form-control" id="txtFirstName" placeholder="First Name *" required>
+              </div>
+            </div>
+                <div class="col-md-6">
+                  <div class="form-input-group">
+                  <input type="text" class="form-control" id="txtLastName" placeholder="Last Name *" required>
+              </div>
+              </div>
+              </div>
             <div class="form-input-group">
               <input type="datetime" class="form-control" id="pickupdate" placeholder="Pickup *" required>
             </div>            
@@ -159,10 +170,13 @@
             <div class="row">
               <div class="col-md-6"><div class="form-input-group">
                 <input type="text" class="form-control" id="txtdate" placeholder="Date *" required>
-            </div></div>
-              <div class="col-md-6"><div class="form-input-group">
+            </div>
+          </div>
+              <div class="col-md-6">
+                <div class="form-input-group">
                 <input type="text" class="form-control" id="txtTime" placeholder="Time *" required>
-            </div></div>
+            </div>
+            </div>
             </div>
             <div class="form-input-group">
                 <input type="email" class="form-control" id="txtemail" placeholder="Email *" required>
@@ -224,12 +238,15 @@
           var dropoff=$('#dropoffDate').val();
           var date=$('#txtdate').val();
           var time=$('#txtTime').val();
+          var firstName=$('#txtFirstName').val();
+          var lastName=$('#txtLastName').val();
           var email=$('#txtemail').val();
           var  phone=$('#txtphone').val();
           var  message=$('#txtMessasge').val();
-          var mail="A new inquiry has been submitted with the following information: <br/>"+"vehicle: "+vehicle+"<br/>"
+          var mail="A new inquiry has been submitted with the following information:<br/> <br/>"+"vehicle: "+vehicle+"<br/>"
           +"service: "+service+"<br/>"
-          +"vehicle: "+vehicle+"<br/>"
+          +"First Name: "+firstName+" & "
+          +"Last Name: "+lastName+"<br/>"
           +"pickup: "+pickupdate+"<br/>"
           +"dropoff: "+dropoff+"<br/>"
           +"date: "+date+" time:"+time+"<br/>"
@@ -243,15 +260,34 @@
             }
             if (email=='')
             {
-              alert("Please Fill date");
+              alert("Please Fill email");
+              return;
+            }
+            if (pickupdate=='')
+            {
+              alert("Please Fill pickup");
+              return;
+            }
+            if (dropoff=='')
+            {
+              alert("Please Fill dropoff");
+              return;
+            }
+            if (firstName=='')
+            {
+              alert("Please Fill Fast Name");
+              return;
+            }  if (lastName=='')
+            {
+              alert("Please Fill Last Name");
               return;
             }
           Email.send({
           Host : "smtp25.elasticemail.com",
           Username : "taherasiddqua@gmail.com",
           Password : "8cc505fa-cdf4-4911-b2d7-28a5ae0a2cb8",
-         // To : 'philcardone@yahoo.com',
-          To : 'sajid.ict@gmail.com',
+         // To : 'sajid.ict@gmail.com',
+          To : 'info@hamptonsvipride.com',
           From :"taherasiddqua@gmail.com",
           Subject : "New Query from "+email,
           Body : mail
