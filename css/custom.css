@@ -51,7 +51,7 @@ article {
     
 }
 .panel-eel-gold > .panel-heading {
-    color: #000;
+    color:white;
     background: #e39401;
     background-image: -moz-linear-gradient(top, #fcac00, #bd7002);
     background-image: -ms-linear-gradient(top, #fcac00, #bd7002);
