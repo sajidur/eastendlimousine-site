@@ -7,6 +7,14 @@
 <!-- Mirrored from eastendlimousine.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 07 May 2019 16:12:28 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141234762-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-141234762-1');
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Hamptons Black Car Limo Service | East End Limousine Company </title>
@@ -78,7 +86,7 @@
               <li><a href="wedding-limousines.html">Wedding Limousines</a></li>
               <li><a href="corporate-accounts.html">Executive Transport</a></li>
               <li><a href="north-fork-wine-tours.html">North Fork Wine Tours</a></li>
-              <li><a href="porm-cars.html">Prom Cars</a></li>
+              <li><a href="prom-cars.html">Prom Cars</a></li>
               <li><a href="special-events.html">Group Night Out</a></li>
               <li><a href="special-events.html">Special Events</a></li>
             </ul>
@@ -363,7 +371,7 @@
                 </div>
                 <div class="col-md-12">
                 <div class="booking-input-form">
-                  <div class="booking-form-data margin-nai">
+                  <div class="booking-form-data margin-nai" style="color: white !important">
                       <div class="row">
                           <div class="col-md-6"><div class="form-input-group">
                             <input type="text" class="form-control" id="txtFirstName" placeholder="First Name *" required>
@@ -410,12 +418,12 @@
               </div>
           </div>
           <div class="col-md-3">
-            <h4>Preeminent Chauffeured Limo Service            </h4>
+            <h4>Preeminent Chauffeured Limo Service </h4>
              <p>Hamptons VIP Ride is the preferred limousine company for black car service from the East End of Long Island to New York City. As well shuttles and transfers to all ny airports.</p>
              <p>Have questions? Call us at (631) 726-7400 or (917) 620-3897<!--or contact us through our <a href"#">message form</a>-->.</p>
-      	<p>Want a Quote? <a class="btn btn-primary btn-xs" href="get-a-quote.html" role="button"> Click Here</a>   </p>
-       <p>Ready to book? <Reserve Now>. </p>
-        <p><a class="btn btn-primary btn-xs" href="Reservenow.html" role="button">Reserve Now &raquo;</a></p>
+           	<p>Want a Quote? <a class="btn btn-primary btn-xs" href="get-a-quote.html" role="button"> Click Here</a>   </p>
+           <p>Ready to book? <Reserve Now>. </p>
+           <p><a class="btn btn-primary btn-xs" href="Reservenow.html" role="button">Reserve Now &raquo;</a></p>
 
 
             <h3>Services</h3>
@@ -449,7 +457,7 @@
       <p>&copy; 2017 Hamptons VIP Ride</p>
     </footer>
   </div> <!-- /container -->        
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-compat/3.0.0-alpha1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <!-- <script src="js/bootstrap.min.js"></script> -->
 
       <script src="js/vendor/bootstrap.min.js"></script>
@@ -487,6 +495,7 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ 
 <script>
   $('.carousel').carousel({
     interval: 4000
@@ -556,29 +565,54 @@
         alert("Please Fill Last Name");
         return;
       }
-    Email.send({
-    Host : "smtp25.elasticemail.com",
-    Username : "taherasiddqua@gmail.com",
-    Password : "8cc505fa-cdf4-4911-b2d7-28a5ae0a2cb8",
-   // To : 'sajid.ict@gmail.com',
-    To : 'info@hamptonsvipride.com',
-    From :"taherasiddqua@gmail.com",
-    Subject : "New Query from "+email,
-    Body : mail
-}).then(
-  message => {
-    alert("Thank you for your inquiry. We will be in touch shortly");
-    $('#ddlvehicle').val('');
-    $('#ddlService').val('');
-    $('#pickupdate').val('');
-    $('#dropoffDate').val('');
-    $('#txtdate').val('');
-    $('#txtTime').val('');
-    $('#txtemail').val('');
-    $('#txtphone').val('');
-    $('#txtMessasge').val('');
-  }
-);
+      var url = 'http://emailsenderapi.bdshefa.com/api/Email/Sendeastindia';
+            var maill={"email":"info@hamptonsvipride.com","toName":email,"content":mail};
+          $.ajax({
+              url: url,             
+              type: 'POST',
+              data:JSON.stringify(maill),
+              contentType: "application/json; charset=utf-8", // this
+              dataType: "json", // and this
+              success: function (responseData) {
+                alert("Thank you for your inquiry. We will be in touch shortly");
+                $('#txtFirstName').val('');
+                $('#txtLastName').val('');
+                $('#pickupdate').val('');
+                $('#dropoffDate').val('');
+                $('#txtdate').val('');
+                $('#txtTime').val('');
+                $('#txtemail').val('');
+                $('#txtphone').val('');
+                $('#txtMessasge').val('');
+
+              },
+              error: function (error) {
+                console.log(error);
+               }
+          });
+//     Email.send({
+//     Host : "smtp.elasticemail.com",
+//     Username : "quotes@eastendlimousine.com",
+//     Password : "86445e90-79a9-4dfc-b31d-0383a51cb7db",
+//     //To : 'sajid.ict@gmail.com',
+//     To : 'info@hamptonsvipride.com',
+//     From :"quotes@eastendlimousine.com",
+//     Subject : "New Query from "+email,
+//     Body : mail
+// }).then(
+//   message => {
+//     alert("Thank you for your inquiry. We will be in touch shortly");
+//     $('#ddlvehicle').val('');
+//     $('#ddlService').val('');
+//     $('#pickupdate').val('');
+//     $('#dropoffDate').val('');
+//     $('#txtdate').val('');
+//     $('#txtTime').val('');
+//     $('#txtemail').val('');
+//     $('#txtphone').val('');
+//     $('#txtMessasge').val('');
+//   }
+// );
   }
 </script>
   </body>
